@@ -1,2 +1,2 @@
-# CursoJava_Udemy
-Primeiros passos do curso de Java pela Udemy
+# Curso Java 
+Atividade realizada no curso de Java pela plataforma Udemy
