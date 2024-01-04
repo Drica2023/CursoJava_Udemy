@@ -1,9 +1,6 @@
 package Med.Cadastro.apiRest.controller;
 
-import Med.Cadastro.apiRest.medico.DadosCadastroMedico;
-import Med.Cadastro.apiRest.medico.DadosListagemMedico;
-import Med.Cadastro.apiRest.medico.Medico;
-import Med.Cadastro.apiRest.medico.MedicoReposity;
+import Med.Cadastro.apiRest.medico.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("medicos")
@@ -31,7 +28,21 @@ public class MedicosController {
         return reposity.findAll(paginacao).map(DadosListagemMedico::new);
 
     }
+    @PutMapping
+    @Transactional
+        public void atualizar(@RequestBody @Valid DadosAtulizacaoMedico dados){
+        var medico = reposity.getReferenceById(dados.id());
+        medico.atualizarinformacao(dados);
 
-    
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void deletar(@PathVariable Long id){
+        reposity.deleteById(id);
+
+
+    }
+
 
 }
