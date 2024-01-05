@@ -1,0 +1,64 @@
+{
+  "name": "Adriana",
+    "account": {
+      "number": "1234567-8",
+      "agency": "1234",
+      "balance": 1324.65,
+      "limit": 3000.00      
+    },
+  "features":[
+    {
+      "icon": "URL",
+      "description": "Description de features"
+    }
+  ],
+  "card": {
+    "number": "xxxx xxxx xxxx xxxx",
+    "limit": 1000.00
+    
+  },
+  "news": [
+    {
+      "icon": "URL",
+      "description": "Description de novidades"
+    }
+  ]
+}
+
+Diagram Class
+
+classDiagram
+  class Usuario {
+    +name: String
+    +account: Conta
+    +features: Feature[]
+    +card: Cartao
+    +news: Novidade[]
+  }
+
+  class Conta {
+    +number: String
+    +agency: String
+    +balance: Float
+    +limit: Float
+  }
+
+  class Feature {
+    +icon: String
+    +description: String
+  }
+
+  class Cartao {
+    +number: String
+    +limit: Float
+  }
+
+  class Novidade {
+    +icon: String
+    +description: String
+  }
+
+  Usuario --> Conta
+  Usuario --> Feature
+  Usuario --> Cartao
+  Usuario --> Novidade
