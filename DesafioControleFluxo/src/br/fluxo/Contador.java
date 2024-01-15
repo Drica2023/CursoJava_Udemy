@@ -30,22 +30,24 @@ public class Contador {
 			}catch (InputMismatchException e) {
 
 			System.out.println("Entre com um numero valido");
-			}
+			}finally {
+			System.out.println("Sistema Finalizado");
+		}
 		
 	}
-	
 	public static void contar (int parametroUm, int parametroDois )  {
 		if (parametroUm < parametroDois) {
 			// validar se parametroUm é maior que parametroDois e lancar a exceçao
 			int contagem = parametroDois - parametroUm;
 			// realizar o for para imprimir os numeros com base na variavel contagem 
 				for (int i =0; i < contagem ; i++) {
-					System.out.println(i);
+
 				}
+			System.out.println(contagem);
 			}else {
 			System.out.println("O segundo parametro deve ser maior que o primeiro" );
 			}
 
-	
-}	
+
+}
 }	
